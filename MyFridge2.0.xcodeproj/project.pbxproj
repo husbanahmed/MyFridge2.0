@@ -59,12 +59,20 @@
 				EF1142A7277A83D900CBD81D /* AppDelegate.swift */,
 				EF1142A9277A83D900CBD81D /* SceneDelegate.swift */,
 				EF1142AB277A83D900CBD81D /* ViewController.swift */,
-				EF1142AD277A83D900CBD81D /* Main.storyboard */,
+				EFA402CC278183EA00EEA306 /* View */,
 				EF1142B0277A83DB00CBD81D /* Assets.xcassets */,
 				EF1142B2277A83DB00CBD81D /* LaunchScreen.storyboard */,
 				EF1142B5277A83DB00CBD81D /* Info.plist */,
 			);
 			path = MyFridge2.0;
+			sourceTree = "<group>";
+		};
+		EFA402CC278183EA00EEA306 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF1142AD277A83D900CBD81D /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
