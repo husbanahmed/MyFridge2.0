@@ -8,17 +8,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    var recipeManager = RecipeManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+
     }
-
-
-    @IBOutlet weak var recipeSearchBar: UISearchBar!{
+    
+    
+    @IBOutlet weak var recipeSearchBar: UISearchBar!
+    
+    @IBAction func searchButton(_ sender: UIButton) {
+        
+        if let query = recipeSearchBar.text{
+            
+            recipeManager.fetchRecipe(query: query)
+            
+        }
         
     }
-
-
+    
     
 }

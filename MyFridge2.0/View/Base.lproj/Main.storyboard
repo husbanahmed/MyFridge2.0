@@ -39,6 +39,9 @@
                                 <color key="tintColor" red="0.26959669590000002" green="0.53040385249999999" blue="0.87846988439999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Search"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="3s6-9u-7D0" eventType="touchUpInside" id="qYP-17-m1U"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vaV-aG-5ag"/>
@@ -46,7 +49,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qzd-n2-pQI"/>
                     <connections>
-                        <outlet property="recipeSearchBar" destination="Vrc-cy-WXs" id="8jD-i9-vNd"/>
+                        <outlet property="recipeSearchBar" destination="Vrc-cy-WXs" id="YiP-Ik-TTi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBX-Ku-NEU" sceneMemberID="firstResponder"/>
