@@ -11,6 +11,7 @@ struct RecipeData:Decodable {
     
     let results: [Recipes]
     
+    
 }
 
 struct Recipes: Decodable {
@@ -21,4 +22,5 @@ struct Recipes: Decodable {
     
     
 }
+
 

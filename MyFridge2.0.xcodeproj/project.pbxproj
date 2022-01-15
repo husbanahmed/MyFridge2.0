@@ -13,6 +13,7 @@
 		EF1142AF277A83D900CBD81D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1142AD277A83D900CBD81D /* Main.storyboard */; };
 		EF1142B1277A83DB00CBD81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1142B0277A83DB00CBD81D /* Assets.xcassets */; };
 		EF1142B4277A83DB00CBD81D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1142B2277A83DB00CBD81D /* LaunchScreen.storyboard */; };
+		EF144FAF278B91EE00A922A2 /* ListRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF144FAE278B91EE00A922A2 /* ListRecipes.swift */; };
 		EF314CCA278691C700E2C5D2 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF314CC9278691C700E2C5D2 /* RecipeData.swift */; };
 		EF43A808278A6129007B6351 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF43A807278A6129007B6351 /* RecipeModel.swift */; };
 		EFA402CE2781884700EEA306 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA402CD2781884700EEA306 /* RecipeManager.swift */; };
@@ -27,6 +28,7 @@
 		EF1142B0277A83DB00CBD81D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF1142B3277A83DB00CBD81D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF1142B5277A83DB00CBD81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF144FAE278B91EE00A922A2 /* ListRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipes.swift; sourceTree = "<group>"; };
 		EF314CC9278691C700E2C5D2 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		EF43A807278A6129007B6351 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		EFA402CD2781884700EEA306 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				EF1142A7277A83D900CBD81D /* AppDelegate.swift */,
 				EF1142A9277A83D900CBD81D /* SceneDelegate.swift */,
 				EF1142AB277A83D900CBD81D /* ViewController.swift */,
+				EF144FAE278B91EE00A922A2 /* ListRecipes.swift */,
 				EF314CC827868D8300E2C5D2 /* Model */,
 				EFA402CC278183EA00EEA306 /* View */,
 				EF1142B0277A83DB00CBD81D /* Assets.xcassets */,
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1142AC277A83D900CBD81D /* ViewController.swift in Sources */,
+				EF144FAF278B91EE00A922A2 /* ListRecipes.swift in Sources */,
 				EFA402CE2781884700EEA306 /* RecipeManager.swift in Sources */,
 				EF314CCA278691C700E2C5D2 /* RecipeData.swift in Sources */,
 				EF1142A8277A83D900CBD81D /* AppDelegate.swift in Sources */,

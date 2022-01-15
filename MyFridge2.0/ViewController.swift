@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+
     
     
     var recipeManager = RecipeManager()
@@ -26,10 +27,9 @@ class ViewController: UIViewController {
         if let query = recipeSearchBar.text{
             
             recipeManager.fetchRecipe(query: query)
-            
+  
         }
         
     }
-    
     
 }

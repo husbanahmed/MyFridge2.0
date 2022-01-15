@@ -7,8 +7,13 @@
 
 import Foundation
 
+protocol RecipeManagerDelegate{
+    func didUpdateRecipe(recipe:RecipeModel)
+}
 
 struct RecipeManager{
+    
+    var delegate: RecipeManagerDelegate?
     
     let recipeURL = "https://api.spoonacular.com/recipes/"
     
@@ -23,6 +28,7 @@ struct RecipeManager{
         let urlString = "\(recipeURL)\(complexSearch)\(apikey)&query=\(query)&number=\(number)"
         
         performRequest(urlString: urlString)
+        
     }
     
     func performRequest(urlString: String){
@@ -40,18 +46,21 @@ struct RecipeManager{
                     return
                 }
                 if let safeData = data {
-                    
-                        self.parseJSON(recipeData: safeData)
-                    
+                    if let recipe = parseJSON(recipeData: safeData){
+                        delegate?.didUpdateRecipe(recipe:recipe)
+                    }
                 }
+                
             }
             task.resume()
         }
         
     }
     
-    func parseJSON(recipeData: Data){
+    func parseJSON(recipeData: Data)-> [RecipeModel?] {
         let decoder  = JSONDecoder()
+        
+        var results: [RecipeModel]
         
         do{
             
@@ -63,15 +72,19 @@ struct RecipeManager{
                 
                 let image = decodedData.results[index].image
                 
-                RecipeModel(recipeTitle: title, recipeImage: image)
+                let recipeResults = RecipeModel(recipeTitle: title, recipeImage: image)
                 
+                results.append(recipeResults)
+                
+//                return results
             }
             
         } catch{
             
             print(error)
-            
+          
         }
+        return results
     }
 }
 
