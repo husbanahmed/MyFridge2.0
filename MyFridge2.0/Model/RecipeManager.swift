@@ -8,7 +8,9 @@
 import Foundation
 
 protocol RecipeManagerDelegate{
-    func didUpdateRecipe(recipe:RecipeModel)
+    
+    func didUpdateRecipe(recipe:[RecipeModel])
+    
 }
 
 struct RecipeManager{
@@ -45,11 +47,12 @@ struct RecipeManager{
                     
                     return
                 }
-                if let safeData = data {
-                    if let recipe = parseJSON(recipeData: safeData){
-                        delegate?.didUpdateRecipe(recipe:recipe)
-                    }
-                }
+              if let safeData = data {
+                  
+                  let recipe = parseJSON(recipeData: safeData)
+                    delegate?.didUpdateRecipe(recipe:recipe)
+                  
+               }
                 
             }
             task.resume()
@@ -57,10 +60,10 @@ struct RecipeManager{
         
     }
     
-    func parseJSON(recipeData: Data)-> [RecipeModel?] {
+    func parseJSON(recipeData: Data)-> [RecipeModel] {
         let decoder  = JSONDecoder()
         
-        var results: [RecipeModel]
+        var recipeList = [RecipeModel]()
         
         do{
             
@@ -74,9 +77,8 @@ struct RecipeManager{
                 
                 let recipeResults = RecipeModel(recipeTitle: title, recipeImage: image)
                 
-                results.append(recipeResults)
+                recipeList.append(recipeResults)
                 
-//                return results
             }
             
         } catch{
@@ -84,7 +86,7 @@ struct RecipeManager{
             print(error)
           
         }
-        return results
+        return recipeList
     }
 }
 
