@@ -21,7 +21,10 @@ struct Recipes: Decodable {
     
     let image: String
     
+    let id: Int
+    
     
 }
+
 
 

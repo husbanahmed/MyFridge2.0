@@ -13,4 +13,6 @@ struct RecipeModel{
     let recipeTitle: String
     
     let recipeImage: String
+    
+    let recipeId: Int
 }
