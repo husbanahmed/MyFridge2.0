@@ -33,6 +33,15 @@ struct RecipeManager{
         
     }
     
+    func fetchData(id:Int){
+        let urlString = "\(recipeURL)\(id)/summary?\(apikey)"
+        
+        performRequest(urlString: urlString)
+        
+    }
+    
+    
+    
     func performRequest(urlString: String){
         
         if let url = URL(string: urlString) {
@@ -49,13 +58,14 @@ struct RecipeManager{
                 }
               if let safeData = data {
                   
-                  let recipe = parseJSON(recipeData: safeData)
-                    delegate?.didUpdateRecipe(recipe:recipe)
+                //  let recipe = parseJSON(recipeData: safeData)
+                  //  delegate?.didUpdateRecipe(recipe:recipe)
                   
                }
                 
             }
             task.resume()
+            
         }
         
     }
@@ -66,9 +76,16 @@ struct RecipeManager{
         
         var recipeList = [RecipeModel]()
         
-        do{
+        
+        enum Recipes {
+            
+            case recipeData
+            
+        }
+        
             
             let decodedData = try decoder.decode(RecipeData.self, from: recipeData)
+            
             
             for index in 0...decodedData.results.count - 1  {
                 
@@ -76,18 +93,19 @@ struct RecipeManager{
                 
                 let image = decodedData.results[index].image
                 
-                let recipeResults = RecipeModel(recipeTitle: title, recipeImage: image)
+                let id = decodedData.results[index].id
+                
+                print(id)
+            
+                let recipeResults = RecipeModel(recipeTitle: title, recipeImage: image, recipeId: id )
                 
                 recipeList.append(recipeResults)
                 
-            }
+                }
             
-        } catch{
-            
-            print(error)
-          
-        }
+       
         return recipeList
     }
+    
 }
 

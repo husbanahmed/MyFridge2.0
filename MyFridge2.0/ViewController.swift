@@ -13,16 +13,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private var recipes = [RecipeModel]()
     
+    var selectedCell: Int = 0
+    
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let nib = UINib(nibName: "TableViewCell", bundle: nil)
+        
         recipeManager.delegate = self
+        
         myTableView.dataSource = self
+        
         myTableView.delegate = self
         
-     self.myTableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+        myTableView.register(nib, forCellReuseIdentifier: "TableViewCell")
+        
+    // self.myTableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
         
 
     }
@@ -33,10 +41,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func searchButton(_ sender: UIButton) {
         
         
+        
         if let query = recipeSearchBar.text{
             
             recipeManager.fetchRecipe(query: query)
         
+            recipeSearchBar.endEditing(true)
+            
         }
         
     }
@@ -58,24 +69,60 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as! TableViewCell
-          
-        cell.titleLabel!.text = recipes[indexPath.row].recipeTitle
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         
+            if let url = URL(string: recipes[indexPath.row].recipeImage) {
+                
+                let session = URLSession(configuration: .default)
+                
+                let task = session.dataTask(with: url) { data, response, error in
+                    
+                    if error != nil {
+                        
+                        print(error!)
+                        
+                        return
+                    }
+                  if let imageData = data {
+                      
+                      let images  = UIImage(data: imageData)
+                    
+                      DispatchQueue.main.async {
+                          
+                          cell.myImageView.image =  images
+                      }
+                    }
+                   
+                    
+                }
+                task.resume()
         
-    
-        //if let title =
-        
-        print(recipes[indexPath.row].recipeTitle)
-        
-       // print("title: \( cell.titleLabel!.text!)")
-        
-        //cell.imageCell!.image = UIImage(contentsOfFile: recipes[indexPath.row]!.recipeImage)
-        
-        //print(UIImage(contentsOfFile: recipes[indexPath.row]!.recipeImage))
+            }
+
+        cell.mylabel!.text = recipes[indexPath.row].recipeTitle
              
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        selectedCell = recipes[indexPath.row].recipeId
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        performSegue(withIdentifier: "showDetail", sender: self)
+        
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if let destination = segue.destination as? DetailVC{
+            destination.recipeNumber = selectedCell
+            
+        }
     }
 }
