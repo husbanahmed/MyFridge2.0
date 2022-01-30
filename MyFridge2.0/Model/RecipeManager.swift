@@ -61,6 +61,7 @@ struct RecipeManager{
     }
     
     func parseJSON(recipeData: Data)-> [RecipeModel] {
+        
         let decoder  = JSONDecoder()
         
         var recipeList = [RecipeModel]()
