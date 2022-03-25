@@ -15,8 +15,10 @@
 		EF1142B4277A83DB00CBD81D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1142B2277A83DB00CBD81D /* LaunchScreen.storyboard */; };
 		EF314CCA278691C700E2C5D2 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF314CC9278691C700E2C5D2 /* RecipeData.swift */; };
 		EF43A808278A6129007B6351 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF43A807278A6129007B6351 /* RecipeModel.swift */; };
+		EF6B9A0527A61D4E00764E15 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6B9A0427A61D4E00764E15 /* DetailVC.swift */; };
 		EFA402CE2781884700EEA306 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA402CD2781884700EEA306 /* RecipeManager.swift */; };
-		EFFF7C51279A4D6D00E3EFF6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFF7C50279A4D6D00E3EFF6 /* TableViewCell.swift */; };
+		EFEF7841279FA9880085987A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF783F279FA9880085987A /* TableViewCell.swift */; };
+		EFEF7842279FA9880085987A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFEF7840279FA9880085987A /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +32,10 @@
 		EF1142B5277A83DB00CBD81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF314CC9278691C700E2C5D2 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		EF43A807278A6129007B6351 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		EF6B9A0427A61D4E00764E15 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		EFA402CD2781884700EEA306 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
-		EFFF7C50279A4D6D00E3EFF6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		EFEF783F279FA9880085987A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		EFEF7840279FA9880085987A /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,8 @@
 				EF1142A7277A83D900CBD81D /* AppDelegate.swift */,
 				EF1142A9277A83D900CBD81D /* SceneDelegate.swift */,
 				EF1142AB277A83D900CBD81D /* ViewController.swift */,
-				EFFF7C50279A4D6D00E3EFF6 /* TableViewCell.swift */,
+				EFEF783F279FA9880085987A /* TableViewCell.swift */,
+				EF6B9A0427A61D4E00764E15 /* DetailVC.swift */,
 				EF314CC827868D8300E2C5D2 /* Model */,
 				EFA402CC278183EA00EEA306 /* View */,
 				EF1142B0277A83DB00CBD81D /* Assets.xcassets */,
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				EF1142AD277A83D900CBD81D /* Main.storyboard */,
+				EFEF7840279FA9880085987A /* TableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1142B4277A83DB00CBD81D /* LaunchScreen.storyboard in Resources */,
+				EFEF7842279FA9880085987A /* TableViewCell.xib in Resources */,
 				EF1142B1277A83DB00CBD81D /* Assets.xcassets in Resources */,
 				EF1142AF277A83D900CBD81D /* Main.storyboard in Resources */,
 			);
@@ -171,7 +178,8 @@
 				EF314CCA278691C700E2C5D2 /* RecipeData.swift in Sources */,
 				EF1142A8277A83D900CBD81D /* AppDelegate.swift in Sources */,
 				EF1142AA277A83D900CBD81D /* SceneDelegate.swift in Sources */,
-				EFFF7C51279A4D6D00E3EFF6 /* TableViewCell.swift in Sources */,
+				EF6B9A0527A61D4E00764E15 /* DetailVC.swift in Sources */,
+				EFEF7841279FA9880085987A /* TableViewCell.swift in Sources */,
 				EF43A808278A6129007B6351 /* RecipeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
